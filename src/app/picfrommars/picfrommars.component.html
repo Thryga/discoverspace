@@ -1,0 +1,17 @@
+<div class="clearfix center-block text-center contain">
+        <div id="marspic">
+            <div class="opac"></div>
+            <div class="details" *ngIf="photo">
+                <h2 class="categorytitle">Photo de Mars</h2>
+                <div class="dateindic">{{formatdate}}</div>
+                <div *ngFor="let pic of photo.photos">
+                    <img (load)="onLoad()" class="pic" src="{{pic.img_src}}"/>
+                    <div *ngIf="!loading" class="pictitle">{{pic.camera.full_name}}</div>
+                </div>
+                <img *ngIf="loading" class="loader" alt="loading" src="../assets/img/loading.gif">
+                <md2-datepicker [(ngModel)]="date" (ngModelChange)="onDateChange()" 
+                placeholder="Choisir une date" [min]="minDate" [max]="maxDate" format="d/MM/y" mode="portrait" touchUi=true startView='year'>
+                </md2-datepicker>
+            </div>
+        </div>
+    </div>
