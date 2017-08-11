@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~https://fonts.googleapis.com/icon?family=Material+Icons';
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+html, body{
+    height: 100%;
+}
+h2{
+    margin: 0 !important;
+    padding: 0;
+}
+.md2-datepicker-button{
+    color:white !important;
+}

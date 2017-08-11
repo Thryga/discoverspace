@@ -1,0 +1,42 @@
+.contain{
+    height: 100%;
+}
+.opac{
+    position: absolute;
+    background: rgba(0,0,0,0.5);
+    height: 100%;width: 100%;
+    z-index: 85;
+}
+.details{
+    position: relative;
+    z-index: 86;
+    color: white;
+}
+.categorytitle{
+    position: absolute;
+    left: 0;
+    display: block;        
+}
+.dateindic{
+    
+}
+.pic{
+    display: inline-block;
+    border: 2px solid rgba(80,80,80,0.5);
+    margin-top: 40px;
+    max-height: 800px;
+}
+.loader{
+    position: absolute;
+    left: 0;right:0;top: 50%;
+    margin: 0 auto;
+}
+.pictitle{
+    display: block;
+}
+.calendar{
+    color: black;background-color: white
+}
+.calendaricon{
+    /*background: url(../../assets/img/calendar.svg);*/
+}

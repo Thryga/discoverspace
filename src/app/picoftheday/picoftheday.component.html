@@ -1,0 +1,20 @@
+<div class="clearfix center-block text-center contain">
+        <div id="daypic">
+            <div class="opac"></div>
+            <div class="details" *ngIf="photo">
+                <h2 class="categorytitle">Photo du jour</h2>
+                <div class="dateindic">{{frdate}}</div>
+                <img *ngIf="loading" class="loader" alt="loading" src="../assets/img/loading.gif">
+                <img (load)="onLoad()" class="pic" src="{{photo.url}}"/>
+                <div class="pictitle" *ngIf="!loading">{{photo.title}}</div>
+                <md2-datepicker [(ngModel)]="date" (ngModelChange)="onDateChange()" 
+                placeholder="Choisir une date" [min]="minDate" [max]="maxDate" format="d/MM/y" mode="portrait" touchUi=true startView='year' color="primary">
+                </md2-datepicker>
+                <nav>
+                    <a routerLink="/Gallerypotd" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}">potd</a>
+                    <a routerLink="/Gallerypfm" routerLinkActive="active">pfm</a>
+                </nav>
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>

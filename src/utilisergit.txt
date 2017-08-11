@@ -1,0 +1,9 @@
+Comment utiliser git :
+
+Console : 
+
+git status : Permet de vérifier la liste de nos fichiers
+
+git add : Ajout de modification à notre dépôt
+
+git commit : Permet de commit nos fichiers dans git (sauvegarder nos fichiers dans notre dossier) ( -m pour incorporer un message)
