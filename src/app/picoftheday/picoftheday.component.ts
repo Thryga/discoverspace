@@ -24,6 +24,7 @@ export class PicofthedayComponent implements OnInit {
     minDate = new Date(1995, 5, 16);
     maxDate = new Date();
     frdate;
+    title = 'Photo du jour';
 
   constructor(private http: HttpClient) { }
 
@@ -49,9 +50,10 @@ export class PicofthedayComponent implements OnInit {
     onDateChange(){
 
         //Changement de format de la date récupérée
-        this.formatdate = moment(this.date).format("YYYY-MM-DD");
-        this.frdate = moment(this.date).format("DD-MM-YYYY");
-        
+        this.dateindic = moment(this.date);
+        this.formatdate = this.dateindic.format("YYYY-MM-DD");
+        this.frdate = this.dateindic.format("DD-MM-YYYY");
+        this.title = 'Photo du '+this.frdate;
         //Appel http pour charger l'image
         this.getCall(this.url+'&date='+this.formatdate);
     }
@@ -61,4 +63,22 @@ export class PicofthedayComponent implements OnInit {
         this.loading = false;
     }
 
+    dateminus(){
+        this.date = moment(this.date).subtract(1, 'day');
+        this.formatdate = this.date.format("YYYY-MM-DD");
+        this.frdate = this.date.format("DD-MM-YYYY");
+        console.log(this.formatdate);
+        this.title = 'Photo du '+this.frdate;
+        this.getCall(this.url+'&date='+this.formatdate);
+    }
+
+    /*dateplus(){
+        this.date = moment(this.date).add(1, 'day');
+        this.formatdate = this.date.format("YYYY-MM-DD");
+        console.log(this.date);
+        this.frdate = this.date.format("DD-MM-YYYY");
+        console.log(this.formatdate);
+        this.title = 'Photo du '+this.frdate;
+        this.getCall(this.url+'&date='+this.formatdate);
+    }*/
 }

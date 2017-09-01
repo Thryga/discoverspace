@@ -7,3 +7,11 @@ git status : Permet de vérifier la liste de nos fichiers
 git add : Ajout de modification à notre dépôt
 
 git commit : Permet de commit nos fichiers dans git (sauvegarder nos fichiers dans notre dossier) ( -m pour incorporer un message)
+
+Github
+
+Récupérer le projet :
+
+git clone dans le dossier voulu avec le code dispo sur github
+
+npm install pour recréer le projet
